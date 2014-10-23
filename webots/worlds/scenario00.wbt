@@ -9,8 +9,8 @@ WorldInfo {
   northDirection -1 0 -1
 }
 Viewpoint {
-  orientation 0.840915 0.516897 0.160251 5.44357
-  position -10.0886 25.1485 19.3545
+  orientation 0.378131 0.846729 0.374256 4.77285
+  position -20.6969 19.8573 5.4699
   follow "pioneer2"
 }
 Background {
@@ -411,25 +411,6 @@ DEF FLOOR Solid {
     size 10 0.1 20
   }
   locked TRUE
-}
-Solid {
-  translation 0 1 0
-  children [
-    Shape {
-      appearance Appearance {
-        material Material {
-          diffuseColor 1 1 0
-        }
-      }
-      geometry Box {
-        size 6.5 2 6.5
-      }
-    }
-  ]
-  name "central solid "
-  boundingObject Box {
-    size 6.5 2 6.5
-  }
 }
 DEF PIONEER2 DifferentialWheels {
   translation 0 0 -9
