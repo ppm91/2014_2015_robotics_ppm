@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(wall_follower)
+project(obstacle_avoidance)
 
 # set and find webots environment paths
 set(WEBOTS_HOME /usr/local/webots)
@@ -11,7 +11,7 @@ add_definitions(-I${WEBOTS_HOME}/include/controller/cpp -I${WEBOTS_HOME}/include
 
 # add main executable
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
-add_executable(wall_follower wall_follower.cpp MyRobot.cpp)
+add_executable(obstacle_avoidance obstacle_avoidance.cpp MyRobot.cpp)
 
 # link to libraries
-target_link_libraries(wall_follower ${C_CONTROLLER_LIBRARY} ${CPP_CONTROLLER_LIBRARY} m)
+target_link_libraries(obstacle_avoidance ${C_CONTROLLER_LIBRARY} ${CPP_CONTROLLER_LIBRARY} m)

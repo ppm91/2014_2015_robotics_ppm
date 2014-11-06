@@ -1,9 +1,9 @@
 /**
  * @file    main.cpp
- * @brief   A simple example for maintaining a straight line with the compass.
+ * @brief   main program
  *
- * @author  Raul Perula-Martinez <raul.perula@uc3m.es>
- * @date    2014-07
+ * @author  Pablo Pérez <100275550@alumnos.uc3m.es>
+ * @date    06-11-2014
  */
 
 #include "MyRobot.h"

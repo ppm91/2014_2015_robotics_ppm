@@ -1,4 +1,10 @@
-
+/**
+ * @file    MyRobot.h
+ * @brief   Definitions
+ *
+ * @author  Pablo Pérez <100275550@alumnos.uc3m.es>
+ * @date    06-11-2014
+ */
 
 #include <iostream>
 #include <cmath>
@@ -7,35 +13,46 @@
 using namespace std;
 using namespace webots;
 #define NUM_DISTANCE_SENSOR 16
+#define DISTANCE_LIMIT 100
 #define MAX_SPEED       100
 
 class MyRobot : public DifferentialWheels {
-    private:
-        int _time_step;
-        
-         DistanceSensor * _distance_sensor[NUM_DISTANCE_SENSOR];
+private:
+    int _time_step;
 
-        Compass * _my_compass;
-        double _left_speed, _right_speed;
+    DistanceSensor * _distance_sensor[NUM_DISTANCE_SENSOR];
 
-    public:
-        /**
+    Compass * _my_compass;
+    double _left_speed, _right_speed;
+    enum Mode {
+        STOP,
+        FORWARD,
+        TURN_LEFT,
+        TURN_RIGHT,
+        OBSTACLE_AVOID,
+        SHARP_TURN,
+        BACKWARDS
+    };
+    
+      Mode _mode;
+public:
+    /**
          * @brief Empty constructor of the class.
          */
-        MyRobot();
+    MyRobot();
 
-        /**
+    /**
          * @brief Destructor of the class.
          */
-        ~MyRobot();
+    ~MyRobot();
 
-        /**
-         * @brief User defined function for initializing and running the template class.
+    /**
+         * @brief User defined function for initializing and running the robot.
          */
-        void run();
+    void run();
 
-        /**
+    /**
           * @brief An example for converting bearing vector from compass to angle (in degrees).
           */
-        double convert_bearing_to_degrees(const double* in_vector);
+    double convert_bearing_to_degrees(const double* in_vector);
 };
