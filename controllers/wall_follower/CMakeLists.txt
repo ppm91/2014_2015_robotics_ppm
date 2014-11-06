@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(compass_example)
+project(wall_follower)
 
 # set and find webots environment paths
 set(WEBOTS_HOME /usr/local/webots)
@@ -10,7 +10,7 @@ find_library(C_CONTROLLER_LIBRARY Controller ${WEBOTS_HOME}/lib)
 add_definitions(-I${WEBOTS_HOME}/include/controller/cpp -I${WEBOTS_HOME}/include -Wall -I${WEBOTS_HOME}/include/controller/c -DLINUX)
 
 # add main executable
-add_executable(compass_example compass_example.cpp MyRobot.cpp)
+add_executable(wall_follower wall_follower.cpp MyRobot.cpp)
 
 # link to libraries
-target_link_libraries(compass_example ${C_CONTROLLER_LIBRARY} ${CPP_CONTROLLER_LIBRARY} m)
+target_link_libraries(wall_follower ${C_CONTROLLER_LIBRARY} ${CPP_CONTROLLER_LIBRARY} m)
